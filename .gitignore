@@ -60,3 +60,5 @@ target/
 TaskBuster.sublime-workspace
 db.sqlite3
 
+.coverage
+htmlcov
