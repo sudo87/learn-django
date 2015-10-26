@@ -56,10 +56,8 @@ class TestGoogleLogin(StaticLiveServerTestCase):
             self.live_server_url + "/accounts/google/login")
         google_login.click()
         self.user_login()
-        google_logout = self.get_element_by_id("logout")
-        google_logout.click()
         with self.assertRaises(TimeoutException):
             self.get_element_by_id("google_login")
-        google_logout = self.browser.find_element_by_tag_name("form")
-        google_logout.submit()
+        google_logout = self.get_element_by_id("logout")
+        google_logout.click()
         google_login = self.get_element_by_id("google_login")
